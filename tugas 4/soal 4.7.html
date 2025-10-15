@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Praktikum 4.7 - Dropdown Menu</title>
+    <link rel="stylesheet" type="text/css" href="soal 4.7.css">
+    <style>
+        /* Tambahan untuk konten About & Contact */
+        .content-section {
+            display: none; /* awalnya sembunyi */
+            padding: 20px;
+            margin: 20px;
+            background: #c8c3c3;
+            border: 1px solid #993a3a;
+        }
+    </style>
+</head>
+<body>
+    <h2>MATERI PRAKTIKUM PEMOGRAMAN WEB</h2>
+    <div id="menu">
+        <ul>
+            <li><a href="#">Praktikum 1</a></li>
+            <!-- Dropdown Praktikum 2 -->
+            <li>
+                <a href="#">Praktikum 2</a>
+            </li>
+            <!-- Dropdown Praktikum 3 -->
+            <li>
+                <a href="#">Praktikum 3</a>
+            </li>
+            <!-- Dropdown Praktikum 4 -->
+            <li>
+                <a href="#">Praktikum 4</a>
+                <ul>
+                    <li><a href="#">4.1 Embedded Style Sheet</a></li>
+                    <li><a href="#">4.2 Inline Style Sheet</a></li>
+                    <li><a href="#">4.3 Linked Style Sheet</a></li>
+                    <li><a href="#">4.4 Selector</a></li>
+                    <li><a href="#">4.5 Grouping Element</a></li>
+                    <li><a href="#">4.6 Float</a></li>
+                    <li><a href="#">4.7 Dropdown Menu</a></li>
+                </ul>
+
+            
+
+            <!-- About & Contact pakai onclick -->
+            <li><a href="#" onclick="showContent('about')">About Me</a></li>
+        </ul>
+    </div>
+
+    <!-- Konten About -->
+    <section id="about" class="content-section">
+        <h3>About Me</h3>
+        <img src="POTO.jpg" width="120"><br>
+        <b>Nama:</b> SALWA KHAIRANI<br>
+        <b>Usia:</b> 19 tahun<br>
+        <b>NO HP:</b> 082338583347<br>
+        <b>NIM:</b> 2411102441192<br>
+        <b>Hobi:</b> mencuci<br>
+        <b>Kelas:</b> Pemrograman Web A
+    </section>
+
+
+    <script>
+        function showContent(sectionId) {
+            // Sembunyikan semua konten dulu
+            var sections = document.querySelectorAll('.content-section');
+            sections.forEach(function(sec) {
+                sec.style.display = "none";
+            });
+
+            // Tampilkan konten yang diklik
+            document.getElementById(sectionId).style.display = "block";
+        }
+    </script>
+</body>
+</html>
